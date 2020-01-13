@@ -24,4 +24,4 @@ Hard-level:
 1. Department Top Three Salaries  
 2. Trips and Users   
 3. Human Traffic of Stadium    
-4. 
+
