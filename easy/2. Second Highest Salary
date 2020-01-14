@@ -1,0 +1,30 @@
+Table: Employee
++----+--------+
+| Id | Salary |
++----+--------+
+| 1  | 100    |
+| 2  | 200    |
+| 3  | 300    |
++----+--------+
+
+Requirement: Return SECOND highest salary, which is 200 here
++---------------------+
+| SecondHighestSalary |
++---------------------+
+| 200                 |
++---------------------+
+
+Explanation:
+1. Find Maximum salary from Employee table;
+2. After exlcuding maximum salary, select highest salary from the rest of salary
+
+Code:
+     SELECT MAX(Salary) AS SecondHighestSalary 
+     FROM Employee
+     /* Salary excludes top salary */
+     WHERE Salary NOT IN
+      /* Find top salary */
+      (SELECT MAX(Salary) AS TopSalary 
+       FROM Employee
+      );
+
